@@ -1,0 +1,160 @@
+.team-container {
+  display: flex;
+}
+
+.team-content {
+  margin-left: 80px;
+  padding: 30px 40px;
+  width: 100%;
+  background-color: #fff;
+}
+
+h2 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.team-table th,
+.team-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-cell img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.action-icon {
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.add-btn {
+  background-color: #1e4b80;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  float: right;
+  cursor: pointer;
+}
+
+/* Modal Overlay Shared for Add/Edit and Delete */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Add/Edit Team Member Modal */
+.modal {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 8px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal input,
+.modal select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #1e4b80;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Delete Confirmation Modal */
+.delete-modal {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 8px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.delete-modal h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1e1e1e;
+}
+
+.delete-modal p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.delete-confirm-btn {
+  background-color: #d32f2f;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

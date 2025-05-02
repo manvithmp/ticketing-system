@@ -1,0 +1,134 @@
+.dashboard-wrapper {
+    display: flex;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .sidebar {
+    width: 80px;
+    background-color: #f5f6f8;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    border-right: 1px solid #e0e0e0;
+    position: fixed;
+    height: 100vh;
+  }
+  
+  .sidebar-link {
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    transition: 0.3s ease;
+  }
+  
+  .sidebar-link .icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .sidebar-link:hover {
+    color: #2b6cb0;
+  }
+  
+  .logo {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-main {
+    margin-left: 100px;
+    flex: 1;
+    padding: 30px;
+    background-color: #fff;
+  }
+  
+  .search-form input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  .tickets-tabs {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .tickets-tabs .active-tab {
+    border-bottom: 2px solid #2b6cb0;
+    font-weight: bold;
+    color: #2b6cb0;
+  }
+  
+  .ticket-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .ticket-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .ticket-time p {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+    text-align: right;
+  }
+  
+  .ticket-time strong {
+    font-size: 16px;
+  }
+  
+  .ticket-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .user-details {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .open-ticket {
+    color: #2b6cb0;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  

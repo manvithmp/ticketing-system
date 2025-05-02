@@ -1,0 +1,102 @@
+.edit-settings-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .edit-profile-content {
+    flex: 1;
+    padding: 30px 40px;
+  }
+  
+  .settings-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    color: #333;
+  }
+  
+  .edit-profile-card {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  .edit-profile-tab {
+    font-weight: 600;
+    font-size: 18px;
+    color: #002b5b;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .edit-profile-tab-line {
+    height: 2px;
+    width: 100%;
+    background-color: #ccc;
+    margin-top: 8px;
+  }
+  
+  .edit-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .input-with-icon {
+    position: relative;
+  }
+  
+  .input-with-icon input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .info-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+  
+  .button-container button {
+    background-color: #003366;
+    color: #fff;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-container button:hover {
+    background-color: #002244;
+  }
+  
