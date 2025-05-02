@@ -1,4 +1,3 @@
-// src/components/ChatWindow.jsx
 import React from 'react';
 
 const ChatWindow = () => {
@@ -14,7 +13,6 @@ const ChatWindow = () => {
       overflow: 'hidden',
       zIndex: 1000
     }}>
-      {/* Header */}
       <div style={{
         padding: '12px 16px',
         backgroundColor: '#f8f9fa',
@@ -25,7 +23,6 @@ const ChatWindow = () => {
         Hubly
       </div>
       
-      {/* Content */}
       <div style={{ padding: '16px' }}>
         <div style={{ 
           marginBottom: '16px',
@@ -96,7 +93,6 @@ const ChatWindow = () => {
         </div>
       </div>
       
-      {/* Input area */}
       <div style={{
         padding: '12px 16px',
         borderTop: '1px solid #e9ecef',

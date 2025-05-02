@@ -1,15 +1,14 @@
-// src/Home.jsx
 import React, { useState } from 'react';
 import './Home.css';
 import ChatWindow from '../components/chatwindow';
-import ChatIcon from '../components/ChatIcon';
+import ChatIcon from '../components/chaticon';
 
 const Home = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
     <div className="home-container">
-      {/* Header */}
+
       <header className="home-header">
         <span className="home-logo">Hubly</span>
         <div className="home-buttons">
@@ -18,7 +17,7 @@ const Home = () => {
         </div>
       </header>
 
-      {/* Hero */}
+
       <section className="home-hero">
         <h1 className="home-title">Grow Your Business Faster with Hubly CRM</h1>
         <p className="home-subtext">
@@ -30,7 +29,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Logo Banner */}
+  
       <section className="logo-banner">
         <span className="logo">Adobe</span>
         <span className="logo">Elastic</span>
@@ -39,7 +38,6 @@ const Home = () => {
         <span className="logo">Framer</span>
       </section>
 
-      {/* Features Section */}
       <section className="features-section">
         <h2 className="section-title">At its core, Hubly is a robust CRM solution.</h2>
         <p className="section-subtext">
@@ -64,7 +62,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+  
       <section className="pricing-section">
         <h2 className="section-title">We have plans for everyone!</h2>
         <p className="section-subtext">
@@ -102,7 +100,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
+ 
       <footer className="footer">
         <div className="footer-logo">Hubly</div>
         <div className="footer-columns">
@@ -158,7 +156,7 @@ const Home = () => {
         </div>
       </footer>
 
-      {/* Floating Chat Button */}
+   
       <div style={{
         position: 'fixed',
         bottom: '20px',

@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Sidebar from './sidebar';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
-import './Dashboard.css';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const [tickets, setTickets] = useState([]);
   const [filteredTickets, setFilteredTickets] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTab, setActiveTab] = useState('all'); // all | resolved | unresolved
-  const navigate = useNavigate(); // To handle redirection
+  const [activeTab, setActiveTab] = useState('all'); 
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is logged in before fetching tickets
-    const token = sessionStorage.getItem('token'); // Use sessionStorage for token
+    
+    const token = sessionStorage.getItem('token'); 
     if (!token) {
-      navigate('/login'); // Redirect to login if no token is found
+      navigate('/login'); 
     } else {
-      fetchTickets(token); // Pass token to fetch tickets
+      fetchTickets(token); 
     }
   }, []);
 
@@ -25,7 +24,7 @@ const Dashboard = () => {
     applyTabFilter();
   }, [tickets, activeTab]);
 
-  // Fetch all tickets from backend
+ 
   const fetchTickets = async (token) => {
     try {
       const res = await axios.get('http://localhost:5000/api/tickets', {
@@ -37,18 +36,18 @@ const Dashboard = () => {
     } catch (err) {
       console.error('Error fetching tickets:', err.message);
       if (err.response && err.response.status === 401) {
-        // Handle unauthorized access (e.g., invalid/expired token)
-        sessionStorage.clear(); // Clear session storage
-        navigate('/login'); // Redirect to login
+       
+        sessionStorage.clear(); 
+        navigate('/login'); 
       }
     }
   };
 
-  // Handle search
+
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!searchQuery.trim()) {
-      fetchTickets(sessionStorage.getItem('token')); // Reset if empty search
+      fetchTickets(sessionStorage.getItem('token'));
       return;
     }
 
@@ -64,7 +63,7 @@ const Dashboard = () => {
     }
   };
 
-  // Apply filtering based on selected tab
+
   const applyTabFilter = () => {
     if (activeTab === 'all') {
       setFilteredTickets(tickets);

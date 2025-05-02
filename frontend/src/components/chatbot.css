@@ -1,11 +1,9 @@
-/* Overall layout */
 .chatbot-wrapper {
   display: flex;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
 }
 
-/* Sidebar */
 .sidebar {
   width: 80px;
   background-color: #f5f6f8;
@@ -19,9 +17,8 @@
   height: 100vh;
 }
 
-/* Main content */
 .chatbot-content {
-  margin-left: 250px; /* space for sidebar */
+  margin-left: 250px;
   display: flex;
   justify-content: space-between;
   padding: 40px 60px;
@@ -29,7 +26,6 @@
   box-sizing: border-box;
 }
 
-/* Left - Chatbot Box */
 .chatbot-left {
   flex: 1;
   max-width: 400px;
@@ -116,7 +112,6 @@
   cursor: default;
 }
 
-/* Welcome Message */
 .chatbot-welcome {
   margin-top: 20px;
   font-size: 14px;
@@ -125,7 +120,6 @@
   max-width: 350px;
 }
 
-/* Right - Settings Panel */
 .chatbot-right {
   width: 400px;
   flex-shrink: 0;

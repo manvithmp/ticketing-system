@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import './Login.css'; // Your custom styling
-
+import './Login.css'; 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [error, setError] = useState(null);  // State to handle error
+  const [error, setError] = useState(null);  
   const [loading, setLoading] = useState(false);
   const history = useNavigate();
 
@@ -17,26 +16,26 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      // Send credentials to the backend for authentication
+     
       const res = await axios.post('http://localhost:5000/api/auth/login', formData);
 
-      // Store the token in sessionStorage or localStorage
+      
       sessionStorage.setItem('token', res.data.token);
       sessionStorage.setItem('userData', JSON.stringify(res.data.userData));
 
-      // Check the user's role and redirect accordingly
+    
       if (res.data.userData.role === 'admin') {
-        history('/dashboard'); // Redirect to admin dashboard
+        history('/dashboard'); 
       } else {
-        history('/userdash'); // Redirect to user dashboard
+        history('/userdash'); 
       }
 
-      setError(null); // Reset error if login is successful
+      setError(null); 
     } catch (err) {
       console.error(err.response?.data || err.message);
-      setError('Invalid credentials'); // Set error message when login fails
+      setError('Invalid credentials');
     } finally {
-      setLoading(false); // Reset loading state after the request
+      setLoading(false); 
     }
   };
 
@@ -65,7 +64,7 @@ const Login = () => {
           <Link className="link-small" to="#">Forgot password?</Link>
         </form>
 
-        {/* Display error popup if there's an error */}
+       
         {error && <div className="error-popup">{error}</div>}
 
         <p className="bottom-text">

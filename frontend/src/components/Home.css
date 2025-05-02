@@ -30,7 +30,6 @@ body {
   align-items: center;
 }
 
-/* ===================== Header ===================== */
 .home-header {
   width: 100%;
   max-width: 1200px;
@@ -82,7 +81,6 @@ body {
   color: white;
 }
 
-/* ===================== Hero ===================== */
 .home-hero {
   max-width: 900px;
   text-align: center;
@@ -129,7 +127,6 @@ body {
   color: var(--primary-color);
 }
 
-/* ===================== Logo Banner ===================== */
 .logo-banner {
   display: flex;
   justify-content: center;
@@ -147,7 +144,6 @@ body {
   font-size: 1rem;
 }
 
-/* ===================== Features ===================== */
 .features-section {
   max-width: 1100px;
   padding: 4rem 1rem;
@@ -212,7 +208,6 @@ body {
   font-style: italic;
 }
 
-/* ===================== Pricing ===================== */
 .pricing-section {
   max-width: 1100px;
   padding: 4rem 1rem;
@@ -270,7 +265,6 @@ body {
   text-align: center;
 }
 
-/* ===================== Footer ===================== */
 .footer {
   width: 100%;
   background-color: white;
@@ -320,7 +314,6 @@ body {
   color: var(--muted-text);
 }
 
-/* Floating Chat Container */
 .chat-float-container {
   position: fixed;
   bottom: 20px;
@@ -331,7 +324,6 @@ body {
   align-items: flex-end;
 }
 
-/* Chat Window */
 .chat-window {
   background-color: white;
   border: 1px solid #ccc;
@@ -356,7 +348,7 @@ body {
   margin-top: 10px;
 }
 
-/* Chat Icon */
+
 .chat-icon-button {
   background-color: #007bff;
   color: white;
@@ -368,7 +360,7 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-/* Chat Widget Styles */
+
 .chat-widget-container {
   position: fixed;
   bottom: 20px;

@@ -1,4 +1,3 @@
-// src/components/ChatIcon.jsx
 import React from 'react';
 
 const ChatIcon = () => {

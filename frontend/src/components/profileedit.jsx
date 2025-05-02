@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Sidebar from './sidebar';
 import './ProfileEdit.css';
-import { FiInfo } from 'react-icons/fi'; // Using react-icons for the info icon
-import Tooltip from '@mui/material/Tooltip'; // Using Material UI Tooltip
-import { useNavigate } from 'react-router-dom'; // To handle navigation
+import { FiInfo } from 'react-icons/fi'; 
+import Tooltip from '@mui/material/Tooltip'; 
+import { useNavigate } from 'react-router-dom'; 
 
 const EditProfile = () => {
   const [profile, setProfile] = useState({
@@ -14,7 +14,7 @@ const EditProfile = () => {
     confirmPassword: '',
   });
 
-  const navigate = useNavigate(); // For routing to login
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
@@ -22,7 +22,7 @@ const EditProfile = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/update-profile', { // Updated URL
+      const response = await fetch('http://localhost:5000/api/update-profile', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(profile),
@@ -30,11 +30,10 @@ const EditProfile = () => {
 
       if (response.ok) {
         alert('Profile updated successfully!');
-        // Redirect to login if the password is updated
         if (profile.password) {
           alert('Please log in again with your updated credentials.');
-          sessionStorage.clear(); // Clear session storage to log out
-          navigate('/login'); // Redirect to login page
+          sessionStorage.clear();
+          navigate('/login');
         }
       } else {
         const errorData = await response.json();

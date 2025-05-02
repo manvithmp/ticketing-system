@@ -13,12 +13,11 @@ const TeamPage = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteIndex, setDeleteIndex] = useState(null);
 
-  // Fetch team members on component mount
   useEffect(() => {
     const fetchTeam = async () => {
       try {
         const res = await axios.get('http://localhost:5000/api/team');
-        setTeam(res.data); // Set the fetched team members
+        setTeam(res.data);
       } catch (err) {
         console.error('Error fetching team members:', err.message);
       }
@@ -27,12 +26,10 @@ const TeamPage = () => {
     fetchTeam();
   }, []);
 
-  // Handle input change in the form
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Open modal for adding or editing
   const openModal = (index = null) => {
     if (index !== null) {
       setFormData(team[index]);
@@ -45,7 +42,6 @@ const TeamPage = () => {
     setShowModal(true);
   };
 
-  // Close modal
   const closeModal = () => {
     setShowModal(false);
     setFormData({ fullName: '', phone: '', email: '', role: 'Member' });
@@ -53,11 +49,10 @@ const TeamPage = () => {
     setEditIndex(null);
   };
 
-  // Handle form submission for adding or updating team members
   const handleSubmit = async () => {
     try {
       if (isEditing && editIndex !== null) {
-        const memberId = team[editIndex]._id; // Get the ID of the team member being edited
+        const memberId = team[editIndex]._id; 
         const res = await axios.put(`http://localhost:5000/api/team/${memberId}`, formData);
         const updatedTeam = [...team];
         updatedTeam[editIndex] = res.data.member;
@@ -73,16 +68,14 @@ const TeamPage = () => {
     }
   };
 
-  // Handle delete click
   const handleDeleteClick = (index) => {
     setDeleteIndex(index);
     setShowDeleteModal(true);
   };
 
-  // Confirm delete operation
   const confirmDelete = async () => {
     try {
-      const memberId = team[deleteIndex]._id; // Get the ID of the team member to delete
+      const memberId = team[deleteIndex]._id; 
       await axios.delete(`http://localhost:5000/api/team/${memberId}`);
       const updatedTeam = [...team];
       updatedTeam.splice(deleteIndex, 1);
@@ -129,7 +122,6 @@ const TeamPage = () => {
         </table>
         <button className="add-btn" onClick={() => openModal()}>➕ Add Team members</button>
 
-        {/* Add/Edit Member Modal */}
         {showModal && (
           <div className="modal-overlay">
             <div className="modal">
@@ -149,7 +141,6 @@ const TeamPage = () => {
           </div>
         )}
 
-        {/* Delete Confirmation Modal */}
         {showDeleteModal && (
           <div className="modal-overlay">
             <div className="delete-modal">

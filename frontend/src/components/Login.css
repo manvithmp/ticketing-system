@@ -94,14 +94,14 @@
   }
   
   .login-image {
-    background-image: url('/login.png'); /* replace with actual image name */
+    background-image: url('/login.png');
   }
   
   .register-image {
-    background-image: url('/register.png'); /* replace with actual image name */
+    background-image: url('/register.png');
   }
   
-  /* Responsive */
+
   @media (max-width: 768px) {
     .auth-container {
       flex-direction: column;
@@ -114,7 +114,7 @@
     .form-section {
       padding: 40px 20px;
     }
-    /* Your existing styles */
+ 
 
 .error-popup {
   position: absolute;
@@ -128,7 +128,7 @@
   font-size: 16px;
   text-align: center;
   width: 80%;
-  z-index: 1000; /* Ensures it appears on top of other elements */
+  z-index: 1000; 
 }
 
 .error-popup::before {

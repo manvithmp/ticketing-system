@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Sidebar from './sidebar'; // ✅ Sidebar imported
+import Sidebar from './sidebar'; 
 import './ContactCenter.css';
 
 const ContactCenter = () => {
@@ -8,25 +8,25 @@ const ContactCenter = () => {
   const [teamMembers, setTeamMembers] = useState([]);
   const [newMessage, setNewMessage] = useState('');
 
-  // Function to fetch team members from the correct route
+ 
   const fetchTeamMembers = async () => {
     try {
-      const response = await fetch('/api/auth/teammembers/find'); // Corrected fetch URL
+      const response = await fetch('/api/auth/teammembers/find');
       if (!response.ok) {
-        throw new Error(`Error: ${response.status}`); // Handle HTTP errors
+        throw new Error(`Error: ${response.status}`); 
       }
-      const data = await response.json(); // Parse JSON response
-      console.log('Team Members:', data); // Debug log
-      setTeamMembers(data); // Set the team members in the state
+      const data = await response.json(); 
+      console.log('Team Members:', data); 
+      setTeamMembers(data);
 
-      // Update dummy chats with fetched team members
+      
       updateDummyChatsWithTeamMembers(data);
     } catch (err) {
       console.error('Error fetching team members:', err);
     }
   };
 
-  // Function to update dummy chats with team members
+ 
   const updateDummyChatsWithTeamMembers = (members) => {
     const dummyChats = [
       {
@@ -38,7 +38,7 @@ const ContactCenter = () => {
           email: 'alice@example.com',
           profilePic: 'https://via.placeholder.com/30',
         },
-        assignedTo: members[0]?.fullName || 'Unassigned', // Dynamically assign first team member or default to 'Unassigned'
+        assignedTo: members[0]?.fullName || 'Unassigned', 
         status: 'Unresolved',
         messages: [
           {
@@ -57,7 +57,7 @@ const ContactCenter = () => {
           email: 'bob@example.com',
           profilePic: 'https://via.placeholder.com/30',
         },
-        assignedTo: members[1]?.fullName || members[0]?.fullName || 'Unassigned', // Dynamically assign second team member or default
+        assignedTo: members[1]?.fullName || members[0]?.fullName || 'Unassigned', 
         status: 'Unresolved',
         messages: [
           {
@@ -69,11 +69,11 @@ const ContactCenter = () => {
       },
     ];
 
-    setChats(dummyChats); // Update chats state with updated dummy chats
+    setChats(dummyChats); 
   };
 
   useEffect(() => {
-    // Initially set dummy chats with default values
+    
     const initialDummyChats = [
       {
         id: 'dummy1',
@@ -115,9 +115,9 @@ const ContactCenter = () => {
       },
     ];
 
-    setChats(initialDummyChats); // Set initial dummy chats
+    setChats(initialDummyChats); 
 
-    // Fetch team members from the backend
+   
     fetchTeamMembers();
   }, []);
 
@@ -159,10 +159,10 @@ const ContactCenter = () => {
 
   return (
     <div className="contact-center-wrapper">
-      <Sidebar /> {/* ✅ Reusable Sidebar component */}
+      <Sidebar /> 
 
       <div className="contact-center-page">
-        {/* Left - Chats Section */}
+       
         <div className="chats-section">
           <h2>Contact Center</h2>
           <div className="chat-list">
@@ -182,7 +182,7 @@ const ContactCenter = () => {
           </div>
         </div>
 
-        {/* Middle - Chat Section */}
+        
         <div className="chat-section">
           {selectedChat ? (
             <>
@@ -220,7 +220,7 @@ const ContactCenter = () => {
           )}
         </div>
 
-        {/* Right - Details Section */}
+       
         <div className="details-section">
           {selectedChat && (
             <>

@@ -7,7 +7,7 @@ const Chatbox = ({ ticketId, chatId }) => {
 
   const fetchChat = async () => {
     try {
-      // Adjust the endpoint to retrieve chat messages as needed
+      
       const res = await axios.get(`http://localhost:5000/api/chat/${chatId}`);
       setMessages(res.data.messages);
     } catch (err) {
@@ -17,14 +17,14 @@ const Chatbox = ({ ticketId, chatId }) => {
 
   useEffect(() => {
     fetchChat();
-    const interval = setInterval(fetchChat, 5000); // Poll every 5 seconds
+    const interval = setInterval(fetchChat, 5000); 
     return () => clearInterval(interval);
   }, [chatId]);
 
   const sendMessage = async () => {
     try {
       await axios.post(`http://localhost:5000/api/chat/${chatId}/message`, {
-        sender: "USER_ID", // Replace with the logged-in user id
+        sender: "USER_ID", 
         message: input
       });
       setInput('');
